@@ -1,4 +1,4 @@
-package Manager;
+package manager;
 
 import domain.MoviesPoster;
 import org.junit.jupiter.api.Test;

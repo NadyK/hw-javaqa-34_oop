@@ -1,4 +1,4 @@
-package Manager;
+package manager;
 
 import domain.MoviesPoster;
 import lombok.AllArgsConstructor;
@@ -16,9 +16,7 @@ public class MovesPosterManager {
 
     public void add(MoviesPoster movie) {
         MoviesPoster[] tmp = new MoviesPoster[movies.length + 1];
-        for (int i = 0; i < movies.length; i++) {
-            tmp[i] = movies[i];
-        }
+        System.arraycopy(movies, 0, tmp, 0, movies.length);
         tmp[tmp.length - 1] = movie;
         this.movies = tmp;
     }
