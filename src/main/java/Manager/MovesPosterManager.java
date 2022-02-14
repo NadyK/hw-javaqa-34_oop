@@ -1,6 +1,6 @@
 package Manager;
 
-import Domain.MoviesPoster;
+import domain.MoviesPoster;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,23 +12,23 @@ import lombok.NoArgsConstructor;
 public class MovesPosterManager {
 
     private MoviesPoster[] movies = new MoviesPoster[0];
-    private int limitLength=10;
+    private int limitLength = 10;
 
-    public void add (MoviesPoster movie){
-        MoviesPoster[] tmp = new MoviesPoster[movies.length+1];
+    public void add(MoviesPoster movie) {
+        MoviesPoster[] tmp = new MoviesPoster[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
             tmp[i] = movies[i];
         }
-        tmp[tmp.length-1] = movie;
-        this.movies=tmp;
+        tmp[tmp.length - 1] = movie;
+        this.movies = tmp;
     }
 
-    public MoviesPoster[] getAll(){
+    public MoviesPoster[] getAll() {
         MoviesPoster[] result = new MoviesPoster[Math.min(movies.length, limitLength)];
 
         for (int i = 0; i < result.length; i++) {
-            int index = movies.length-i-1;
-            result[i]=movies[index];
+            int index = movies.length - i - 1;
+            result[i] = movies[index];
         }
         return result;
     }
